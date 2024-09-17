@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul{
+            background-color: orange;
+            list-style-type: none;
+            text-align: center;
+        }
+
+        .menu li{
+            display: inline-block;
+            color: #f1f1f1;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .menu ul li a{
+            color: #f1f1f1;
+            text-decoration: none;
+            display: block;
+        }
+        .menu ul li a:hover{
+            background-color: #e4e4e4;
+            color: black;
+        }
+        .menu ul li > .sub-menu{
+            display: none;
+            position: absolute;
+            width: 158px;
+        }
+        .menu li{
+            position: relative;
+        }
+
+        .sub-menu{
+            display: none;
+            position: absolute;
+        }
+        .sub-menu li{
+            width: 100%;
+        }
+        .menu ul li:hover .sub-menu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Diễn đàn</a></li>
+            <li>
+                <a href="#">Tin tức</a>
+                <ul class="sub-menu">
+                    <li><a href="#">WordPress</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Hosting</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Hỏi đáp</a>
+                <ul class="sub-menu">
+                    <li><a href="#">WordPress</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Hosting</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+
+    <div style="text-align: center; padding-top: 40px;">
+        <form action="#">
+            <label for="value_a">Nhập a: </label><input type="text" name="value_a" id="value_a">
+            <br>
+            <label for="value_b">Nhập b: </label><input type="text" name="value_b" id="value_b">
+            <div class="btn" style="padding-bottom: 10px;">
+                <Button type="button" class="btnTinhTong" style="margin-top: 20px;" onclick="tinh();">Tính tổng</Button>
+            </div>
+            <label >Tổng của 2 số là: </label><label id="ketqua">0</label>
+        </form>
+    </div>
+    <script>
+        function tinhTong(a,b) {
+            var tong = a + b;
+            return tong;
+        }
+
+        function tinh(){
+            var value_a = document.getElementById("value_a").value;
+            var value_b = document.getElementById("value_b").value;
+            var tong = parseInt(value_a) + parseInt(value_b);
+            document.getElementById("ketqua").innerHTML = tong;
+        }
+    </script>
+</body>
+</html>

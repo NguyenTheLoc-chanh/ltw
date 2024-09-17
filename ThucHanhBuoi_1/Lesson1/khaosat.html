@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khảo sát ý kiến</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Khảo sát ý kiến</h1>
+        <p>V/V: Các kỹ năng cần có đối với sinh viên để thành công trong công việc</p>
+        <hr class="hr_survey">
+    </div>
+
+    <form action="#" class="content">
+        <p>Theo bạn kỹ năng nào là cần thiết đối với bạn trong số các kỹ năng sau:</p>
+        <div class="skills">
+            <fieldset>
+                <legend>Kỹ năng mềm cần có</legend>
+                <div class="skill__list">
+                    <div class="skill__item">
+                        <ul>
+                            <li><input type="checkbox" name="skill_1" value="1">Kỹ năng đặt mục tiêu</li>
+                            <li><input type="checkbox" name="skill_2" value="2">Sáng tạo trong công việc</li>
+                            <li><input type="checkbox" name="skill_3" value="3">Biết lắng nghe và học tập những lời phê bình</li>
+                            <li><input type="checkbox" name="skill_4" value="4">Giao tiếp hiệu quả</li>
+                            <li><input type="checkbox" name="skill_5" value="5">Tự tin năng động và biết lôi kéo người khác</li>
+                        </ul>
+                    </div>
+                    <div class="skill__item">
+                        <ul>
+                            <li><input type="checkbox" name="skill_6" value="6">Kỹ năng làm việc đồng đội</li>
+                            <li><input type="checkbox" name="skill_7" value="7">Kỹ năng khám phá và lãnh đạo bản thân</li>
+                            <li><input type="checkbox" name="skill_8" value="8">Kỹ năng tổ chức công việc và quản lý thời gian</li>
+                            <li><input type="checkbox" name="skill_9" value="9">Kỹ năng đưa ra quyết định</li>
+                            <li><input type="checkbox" name="skill_10" value="10">Kỹ năng giải quyết vẫn đề</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="opinion">
+                    <label for="opinion_lable">Ý kiến khác: </label>
+                    <textarea name="opinion_lable" id="opinion_lable" placeholder="Nhập các kỹ năng khác"></textarea>
+                </div>
+            </fieldset>
+        </div>
+        <div class="info">
+            <fieldset>
+                <legend>Thông tin cá nhân</legend>
+                <div class="info__content">
+                    <div class="info__content-list">
+                        <ul>
+                            <li class="info__content-list-item">
+                                <label for="name">Họ và tên:</label>
+                                <input type="text" name="name" id="name">
+                            </li>
+                            <li class="info__content-list-item">
+                                <label for="age">Độ tuổi:</label>
+                                <input type="number" id="age" name="age" min="18" max="24" step="1" placeholder="18 - 24">
+                            </li>
+                            <li class="info__content-list-item">
+                                <label for="">Giới tính:</label>
+                                    <input type="radio" name="gt" id="nam" value="1"><label for="nam" style="padding-right: 4px;">Nam</label>
+                                    <input type="radio" name="gt" id="nu" value="0"><label for="nu">Nữ</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info__content-img">
+                        <img src="./assets/img/success.jpg" alt="Ảnh thành công" >
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="load">
+            <button type="submit" class="btn btn__submit">Gửi dữ liệu</button>
+            <button type="reset" class="btn">Làm lại</button>
+        </div>
+    </form>
+    <footer>
+        <p style="text-align: center; font-size: 16px;">Cảm ơn bạn đã tham gia khảo sát!</p>
+    </footer>
+</body>
+</html>

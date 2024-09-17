@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // function check(){
+        //     /* B1: Lấy giá trị trong chuỗi
+        //        B2: Tách chuỗi thông qua dấu phẩy
+        //        B3:Chuẩn bị chuỗi
+        //        B4: Gán chuỗi vào ds
+        //     */
+        //    chuoi = document.getElementById("chuoi").value;
+        //    mang = chuoi.split(",");
+        //    chuoigan = "";
+        //    for (index = 0; index < mang.length; index++) {
+        //      chuoigan += `<option value="${mang[index]}">${mang[index]}</option>`;
+        //    }
+        //    document.getElementById("ds").innerHTML = chuoigan;
+        // }
+
+        // function changeImg(){
+        //     anh = document.getElementById("anh");
+        //     value = anh.getAttribute("src");
+        //     if(value =="den1.jpg"){
+        //         anh.setAttribute("src","den2.png");
+        //     }else{
+        //         anh.setAttribute("src","den1.jpg");
+        //     }
+        // }
+
+        // function RegEx(){
+        //     mau =/^[/w]+@[a-zA-Z]{3,}\.[a-zA-Z]{3,}$/;
+        //     /*
+        //     ^ : Bắt đầu của chuỗi.
+        //     [\w]+ : Một hoặc nhiều ký tự chữ cái, số, hoặc gạch dưới (underscore). Ký tự \w là viết tắt của [a-zA-Z0-9_].
+        //     @ : Ký tự @ bắt buộc.
+        //     [a-zA-Z]{3,} : Ít nhất ba chữ cái (cả chữ hoa và chữ thường) sau ký tự @.
+        //     \. : Dấu chấm . (ký tự dấu chấm phải được thoát khỏi vì dấu chấm có ý nghĩa đặc biệt trong biểu thức chính quy).
+        //     [a-zA-Z]{3,} : Ít nhất ba chữ cái (cả chữ hoa và chữ thường) sau dấu chấm.
+        //     $ : Kết thúc của chuỗi.
+        //     */
+        //    chuoiCheck = document.getElementById("username").value;
+        //    kqCheck = mau.test(chuoiCheck);
+        // }
+        function checkRegister() {
+    /*
+    Tên đăng nhập: chữ, số, ít nhất 6 ký tự
+    Mật khẩu: chữ, số, ít nhất 8 kí tự
+    Nhập lại mật khẩu: phải giống mật khẩu cũ
+    Email: ít nhất 1 chữ hoặc số sau đó đến @ sau đó đến ít nhất 3 chữ sau đó đến dấu chấm sau đó ít nhất 3 chữ
+    Số điện thoại: chỉ là số, 10 ký tự, bắt đầu = 0
+    */
+
+    // Biểu thức chính quy
+    const usernameRegex = /^[a-zA-Z0-9]{6,}$/;
+    const passwordRegex = /^[a-zA-Z0-9]{8,}$/;
+    const emailRegex = /^[\w]+@[a-zA-Z]{3,}\.[a-zA-Z]{3,}$/;
+    const phoneRegex = /^0\d{9}$/;
+
+    // Lấy giá trị từ các trường đầu vào
+    const userName = document.getElementById("username").value;
+    const pass = document.getElementById("pass").value;
+    const passagain = document.getElementById("passagain").value;
+    const email = document.getElementById("email").value;
+    const numPhone = document.getElementById("phone").value;
+
+    // Kiểm tra từng điều kiện
+    const resUser = usernameRegex.test(userName);
+    const resPass = passwordRegex.test(pass);
+    const resEmail = emailRegex.test(email);
+    const resPhone = phoneRegex.test(numPhone);
+    
+
+    // Kiểm tra tên đăng nhập
+    if (!resUser) {
+        document.getElementById("erUserName").innerHTML = "Tên đăng nhập không hợp lệ";
+        checkResUser = false;
+    } else {
+        document.getElementById("erUserName").innerHTML = "Đúng";
+        checkResUser = true
+    }
+
+    // Kiểm tra mật khẩu
+    if (!resPass) {
+        document.getElementById("erPass").innerHTML = "Mật khẩu không hợp lệ";
+        return false;
+        checkResPass = false;
+    } else {
+        document.getElementById("erPass").innerHTML = "Đúng";
+        checkResPass = true;
+    }
+
+    // Kiểm tra mật khẩu nhập lại
+    if (pass !== passagain) {
+        document.getElementById("erPassAg").innerHTML = "Mật khẩu nhập lại không khớp";
+        checkPassAgin = false;
+    } else {
+        document.getElementById("erPassAg").innerHTML = "Đúng";
+        checkPassAgin = true;
+    }
+
+    // Kiểm tra email
+    if (!resEmail) {
+        document.getElementById("erEmail").innerHTML = "Email không hợp lệ";
+        checkResEmail = false;
+    } else {
+        document.getElementById("erEmail").innerHTML = "Đúng";
+        checkResEmail = true;
+    }
+
+    // Kiểm tra số điện thoại
+    if (!resPhone) {
+        document.getElementById("erPhone").innerHTML = "Số điện thoại không hợp lệ";
+        checkResPhone = false;
+    } else {
+        document.getElementById("erPhone").innerHTML = "Đúng";
+        checkResPhone = true;
+    }
+
+    // Nếu tất cả các kiểm tra đều đúng, trả về true
+    return checkResUser && checkResPass && checkPassAgin && checkResEmail && checkResPhone;
+}
+
+    </script>
+</head>
+<body>
+    <!-- Chuỗi: <input type="text" name="chuoi" id="chuoi">
+    <br>
+    Danh sách: <select name="ds" id="ds"></select>
+    <br>
+    <input type="button" value="Đổi" name="doi" id="doi"
+    onclick="check();"/>
+    <br>
+    <img id="anh" src="den1.jpg" alt="Đèn 1" width="100px" height="100px"
+    onclick="changeImg();"/> -->
+
+    <!-- <div>
+        <form action="" method="post" onsubmit="RegEx();">
+            <label for="username">UserName</label>
+            <input type="text" name="username" id="username"><br>
+            <label for="pass">Password</label>
+            <input type="password" class="form-control" name="pass" id="pass" placeholder=""><br>
+            <input type="submit" value="Đăng nhập" name="login">
+        </form>
+    </div> -->
+
+    
+        <form action="" method="post" onsubmit="return checkRegister();">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" name="username" id="username">
+            <label id="erUserName">0</label>
+            <br>
+            <label for="pass">Mật khẩu:</label>
+            <input type="password" name="pass" id="pass" placeholder="">
+            <label id="erPass"></label>
+            <br>
+            <label for="passagain">Nhập lại mật khẩu:</label>
+            <input type="password" name="passagain" id="passagain" placeholder="">
+            <label id="erPassAg"></label>
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+            <label id="erEmail"></label>
+            <br>
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" id="phone">
+            <label id="erPhone"></label>
+            <br>
+            <input type="submit" value="Đăng nhập" name="login">
+        </form>
+  
+</body>
+</html>

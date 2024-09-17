@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    line-height: 25.6px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.web{
+    margin: 0 100px;
+}
+
+.content__opening{
+    margin-top: 20px;
+}
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.hr {
+    text-align: center;
+    width: 30%;
+    border: 1px dashed rgb(89, 88, 88);
+    margin: auto;
+}
+
+.title__define{
+    padding: 16px 0;
+    font-size: 16px;
+}
+
+.content__body-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.content__body-list{
+    display: flex;
+    padding: 20px;
+}
+
+.content__body-list-img{
+    width: 400px;
+    border-radius: 2px;
+}
+
+.content__body-list-skills{
+    padding: 0 50px;
+    font-size: 16px;
+    font-weight: 600;
+}
+/* Khảo sát */
+#header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#header h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+#header p{
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.hr_survey{
+    margin-top: 8px;
+    width: 40%;
+    margin: auto;
+    border: 1px dashed rgb(89, 88, 88);
+}
+
+.content{
+    margin: 0 100px;
+}
+
+.content p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+legend{
+    margin-left: 20px;
+}
+
+.skill__list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.skill__item ul{
+    list-style: none;
+}
+
+.skill__item input{
+    margin-right: 4px;
+    margin-top: 2px;
+}
+
+.opinion{
+    padding-top: 10px;
+    margin-left: 12%;
+}
+
+#opinion_lable{
+    width: 60%;
+    padding: 12px 0 0 2px;
+}
+
+/* Info */
+.info{
+    margin-top: 16px;
+}
+
+.info__content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info__content-list ul{
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.info__content-list input[type="radio"]{
+    margin-right: 4px;
+    margin-top: 2px;
+}
+
+.info__content-list-item label:nth-child(1){
+    margin-right: 40px;
+}
+
+.info__content-list-item:nth-child(2) label{
+    margin-right: 53px;
+}
+
+.info__content-list-item{
+    padding-top: 6px;
+}
+
+.info__content-img img{
+    width: 200px; 
+    margin-right: 300px;  
+}
+/* Load*/
+.load{
+    text-align: right;
+    padding: 12px 10px 0 0;
+}
+
+.btn{
+    min-width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 0 12px;
+    cursor: pointer;
+    background-color: #7d7d7d;
+    /* display: inline-flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.btn:hover{
+    background-color: #333;
+}
+
+.btn__submit{
+    margin-right: 10px;
+}
+

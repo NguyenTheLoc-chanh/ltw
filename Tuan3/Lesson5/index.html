@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5 - Tuần 3: Ngôn ngữ kịch bản</title>
+    <style>
+        body{
+            max-height: 1200px;
+        }
+    </style>
+    <script>
+        const selectElment =  document.getElementById("ds");
+        const lableElment = document.getElementById("tb");
+        function splitArray() {
+            const chuoi = document.getElementById("chuoi").value;
+            if(!chuoi){
+                document.getElementById("er").style.display ="block";
+                document.getElementById("er").innerHTML = "Không được để trống chuỗi!";
+                document.getElementById("chuoi").focus();
+                document.getElementById("ds").innerHTML = "";
+            }else{
+                arr = chuoi.split(",");
+                arrGan = "";
+                for(var index = 0; index < arr.length; index++){
+                    arrGan += `<option value="${arr[index]}">${arr[index]}</option>`
+                }
+                document.getElementById("ds").innerHTML = arrGan;
+                document.getElementById("er").style.display = "none";
+            }
+        }
+        selectElment.addEventListener('change', function(){
+            // selectedvalue = selectElment.value;
+            // lableElment.innerHTML = `Bạn đã chọn ${selectedvalue}`;
+            alert("haha")
+        });
+    </script>
+</head>
+<body>
+    <div style="border: 1px solid #ccc; width: 300px; margin: 100px auto; height: 150px;">
+        <div style="margin: 10px 20px">
+            <label for="chuoi" style="padding-right: 28px;">Chuỗi</label>
+            <input type="text" name="chuoi" id="chuoi">
+        </div>
+        <label id="er" style="padding: 4px 22px; display: none; color: red;"></label>
+        <div style="margin: 10px 20px">
+            <label for="ds">Danh sách</label>
+            <select name="ds" id="ds" style="width: 170px;"></select>
+        </div>
+        <label id="tb" style="padding: 4px 22px; display: none; color: green;"></label>
+        <div style="float: right; margin-right: 30px; padding: 8px 0;">
+            <input type="button" value="Thực hiện" onclick="splitArray();">
+            <input type="button" value="Hủy">
+        </div>
+    </div>
+</body>
+</html>
