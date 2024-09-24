@@ -10,8 +10,6 @@
         }
     </style>
     <script>
-        const selectElment =  document.getElementById("ds");
-        const lableElment = document.getElementById("tb");
         function splitArray() {
             const chuoi = document.getElementById("chuoi").value;
             if(!chuoi){
@@ -29,11 +27,30 @@
                 document.getElementById("er").style.display = "none";
             }
         }
-        selectElment.addEventListener('change', function(){
-            // selectedvalue = selectElment.value;
-            // lableElment.innerHTML = `Bạn đã chọn ${selectedvalue}`;
-            alert("haha")
-        });
+        function updateLabel() {
+            const selectElment = document.getElementById("ds");
+            const lableElment = document.getElementById("tb");
+            const selectedValue = selectElment.value;
+            if (selectedValue) {
+                lableElment.innerHTML = `Bạn đã chọn: ${selectedValue}`;
+                lableElment.style.display = "block";
+            } else {
+                lableElment.style.display = "none";
+            }
+        }
+
+        function deleteTextBox() {
+            document.getElementById("chuoi").value = "";
+            document.getElementById("ds").innerHTML = "";
+            document.getElementById("er").style.display = "none";
+            document.getElementById("tb").style.display = "none";
+        }
+        // sự kiện gọi khi toàn bộ trang web được tải hết
+        window.onload = function() {
+            
+            const selectElment = document.getElementById("ds");
+            selectElment.addEventListener('change', updateLabel);
+        }
     </script>
 </head>
 <body>
@@ -50,7 +67,7 @@
         <label id="tb" style="padding: 4px 22px; display: none; color: green;"></label>
         <div style="float: right; margin-right: 30px; padding: 8px 0;">
             <input type="button" value="Thực hiện" onclick="splitArray();">
-            <input type="button" value="Hủy">
+            <input type="button" value="Hủy" onclick="deleteTextBox();">
         </div>
     </div>
 </body>

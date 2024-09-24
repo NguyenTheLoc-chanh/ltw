@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6 - Tuần 3</title>
+    <script>
+        function checkNgay(day,month,year){
+            let check = false;
+            switch(month){
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    check = (day >= 1 && day <=31)
+                    break;
+                case 4: case 6: case 9: case 11:
+                    check = (day >= 1 && day <= 30)
+                    break;
+                case 2:
+                    const isYear = (year % 4 === 0 && year % 100 !==0) || (year % 400 ===0);
+                    check = (day >=1 && day <= (isYear ? 28:29));
+                    break;
+                default:
+                    check = false;
+                    break;
+            }
+            return check;
+        }
+        function checkCungHoangDao(){
+            const date = document.getElementById("date").value;
+            if(!date){
+                document.getElementById("date").focus();
+                document.getElementById("tb").style.display = "block";
+                document.getElementById("tb").innerHTML = "Không được để trống ngày sinh!";
+            }else{
+                document.getElementById("tb").style.display = "none";
+                const partsDate = date.split('/');
+                const day = parseInt(partsDate[0],10);
+                const month = parseInt(partsDate[1],10);
+                const year = parseInt(partsDate[2], 10);
+
+                if(checkNgay(day, month, year)){
+                    let cung ="";
+                    switch (month) {
+                        case 1:
+                        // cung = (day <= 19) ? "Ma Kết" : "Bảo Bình";
+                            if (day <= 19) cung = "Ma Kết";
+                            else cung = "Bảo Bình";
+                                break;
+                        case 2:
+                            if (day <= 18) cung = "Bảo Bình";
+                            else cung = "Song ngư";
+                                break;
+                        case 3:
+                            if (day <= 20) cung = "Song ngư";
+                            else cung = "Bạch dương";
+                                break;
+                        case 4:
+                            if (day <= 20) cung = "Bạch dương";
+                            else cung = "Kim ngưu";
+                                break;
+                        case 5:
+                            if (day <= 20) cung = "Kim ngưu";
+                            else cung = "Song tử";
+                                break;
+                        case 6:
+                            if(day <= 21) cung = "Song tử";
+                            else cung = "Cự giải";
+                            break;
+                        case 7:
+                            if(day <= 22) cung = "Cự giải";
+                            else cung = "Sư tử";
+                            break;
+                        case 8:
+                            if (day <= 22) cung = "Sư Tử";
+                            else cung = "Xử Nữ";
+                            break;
+                        case 9:
+                            if (day <= 22) cung = "Xử Nữ";
+                            else cung = "Thiên Bình";
+                            break;
+                        case 10:
+                            if (day <= 23) cung = "Thiên Bình";
+                            else cung = "Bọ Cạp";
+                            break;
+                        case 11:
+                            if (day <= 22) cung = "Bọ Cạp";
+                            else cung = "Nhân Mã";
+                            break;
+                        case 12:
+                            if (day <= 21) cung = "Nhân Mã";
+                            else cung = "Ma Kết"; 
+                            break;
+                        default:
+                            cung = "Ngày sinh không tồn tại"
+                            break;
+                    }
+                    document.getElementById("cung").value = cung;
+                }else{
+                    document.getElementById("tb").style.display = "block";
+                    document.getElementById("tb").innerHTML = "Ngày không hợp lệ";
+                    document.getElementById("date").focus();
+                }
+            }
+        }
+        function resetContent(){
+            document.getElementById("date").value ="";
+            document.getElementById("cung").value  ="";
+        }
+    </script>
+</head>
+<body>
+    <div style="border: 1px solid #ccc; width: 300px; margin: 100px auto; height: 150px;">
+        <div style="margin: 10px 20px">
+            <label for="date" style="padding-right: 18px;">Ngày sinh</label>
+            <input type="text" name="date" id="date">
+        </div>
+        <label id="tb" style="padding: 4px 22px; display: none; color: red;"></label>
+        <div style="margin: 10px 20px">
+            <label for="cung" style="padding-right: 48px;">Cung</label>
+            <input type="text" name="cung" id="cung">
+        </div>
+        <div style="float: right; margin-right: 30px; padding: 8px 0;">
+            <input type="button" value="Xem" onclick="checkCungHoangDao();">
+            <input type="button" value="Xóa" onclick="resetContent();">
+        </div>
+    </div>
+</body>
+</html>

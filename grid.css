@@ -13,12 +13,13 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: -12px;
-    margin-right: -12px;
+    margin-right: -12px;/*giúp kéo các cột ra ngoài để bù đắp cho khoảng cách padding của các cột.*/
 }
 
 .col {
     padding-left: 12px;
     padding-right: 12px;
+    /* tạo khoảng cách nội dung trong cột, đảm bảo nội dung không bị dính vào cạnh của cột. */
 }
 
 .l-1,
