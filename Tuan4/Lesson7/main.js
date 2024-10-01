@@ -30,6 +30,7 @@ btnAdd.addEventListener("click", function(e){
 function onCancel(){
     ddlDanhSachHang.innerHTML ="";
     txtHang.value = "";
+    lblError.style.display = "none";
     render();
     divHang.classList.remove("active");
     btnSave.classList.remove("active");
@@ -42,7 +43,6 @@ btnSave.addEventListener("click", function(e){
         lblError.style.display = "block";
         txtHang.focus();
     }else{
-        console.log(brands.map((value) => value));
         lblError.style.display = "none";
         //Phương thức này tạo một mảng mới bằng cách áp dụng hàm cho từng phần tử trong mảng brands
         if(brands
