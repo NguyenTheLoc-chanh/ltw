@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8 - Tuần 4</title>
+</head>
+<style>
+    table,th,td{
+        border: 1px solid #333;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+    .list{
+        border: 1px solid #333;
+        width: 360px;
+        height: 290px;
+    }
+
+    .list-item {
+        margin: 10px 20px;
+    }
+
+    .list-item label{
+        margin-right: 4px;
+    }
+    .btn{
+        float: right;
+    }
+    .cancel{
+        margin: 0 20px;
+    }
+
+    #hang{
+        margin-left: 26px;
+    }
+
+    #price{
+        margin-left: 34px;
+    }
+    .er_nameVXL,
+    .er_hang,
+    .er_date,
+    .er_price {
+        display: none;
+    }
+    .er_nameVXL.active,
+    .er_hang.active,
+    .er_date.active,
+    .er_price.active{
+        margin-left: 20px;
+        display: block;
+        color: red;
+    }
+    .count::before{
+        counter-increment: div;
+        content: counter(div);
+    }
+</style>
+<body>
+    <div style="text-align: center; width: 100%;">
+        <table style="margin: auto;" id="table">
+            <tr>
+                <th>STT</th>
+                <th>Tên VXL</th>
+                <th>Hãng sx</th>
+                <th>Ngày ra mắt</th>
+                <th>Giá (vnđ)</th>
+            </tr>
+            <tr>
+                <td class="count"></td>
+                <td>Core i3 7000</td>
+                <td>Intel</td>
+                <td>20/11/2011</td>
+                <td>3.450.000</td>
+            </tr>
+        </table>
+    </div>
+    <form class="list" method="post">
+        <div class="list-item">
+            <label for="nameVXL">Tên VXL</label>
+            <input type="text" name="name" id="nameVXL">
+        </div>
+        <label class="er_nameVXL">Không được để trống!</label>
+        <div class="list-item">
+            <label for="hang">Hãng</label>
+            <input type="text" name="hang" id="hang">
+        </div>
+        <label class="er_hang">Không được để trống!</label>
+        <div class="list-item">
+            <label for="date">Ngày ra mắt</label>
+            <input type="text" name="date" id="date">
+        </div>
+        <label class="er_date">Ngày ra mắt không được lớn hơn ngày hiện tại!</label>
+        <div class="list-item">
+            <label for="price">Giá</label>
+            <input type="text" name="price" id="price">
+        </div>
+        <label class="er_price">Vui lòng nhập giá!</label>
+        <div class="btn">
+            <button class="add">Thêm</button>
+            <button class="cancel">Hủy</button>
+        </div>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
+
+<!-- C1: Thuật toán phân lớp
+     C2: Phân cụm K-Means
+     C3: Đánh giá hiệu năng hệ thống
+     + accuracy: độ chính xác
+     +MSE, R^2 -->

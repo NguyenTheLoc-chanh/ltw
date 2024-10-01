@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7 - Tuần 4</title>
+    <style>
+        form {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main {
+            border: 1px solid #333;
+            width: 380px;
+            height: 160px;
+        }
+        .list {
+            display: flex;
+        }
+        h3 {
+            margin: 10px;
+        }
+        select {
+            margin: 10px;
+            width: 80px;
+        }
+        .hang{
+            display: none;
+        }
+        .hang label{
+            padding-right: 20px;
+        }
+        .btn {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        .save {
+            display: none;
+        }
+        .cancel{
+            margin: 0 20px;
+        }
+
+        .hang.active,
+        .save.active {
+            display: block;
+            justify-content: flex-start;
+            margin-left: 10px;
+            text-align: start;
+        }
+
+        .hang.inactive,
+        .add.inactive {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <div class="main">
+            <div class="list">
+                <h3>Danh sách Hãng sản xuất CPU</h3>
+                <select name="ds" id="ddlDanhsachhangsx"></select>
+            </div>
+            <div class="hang">
+                <label class="lblHang" for="txtHang">Hãng</label>
+                <input type="text" name="hang" id="txtHang">
+            </div>
+            <label id="tb" style="padding: 4px 22px; display: none; color: red;">Không được để trống!</label>
+            <div class="btn">
+                <button class="add">Thêm</button>
+                <button class="save">Lưu</button>
+                <button class="cancel">Hủy</button>
+            </div>
+        </div>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
