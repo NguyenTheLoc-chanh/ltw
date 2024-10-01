@@ -19,7 +19,6 @@ function checkValue() {
     const hang = txtHang.value.trim();
     const date = txtDate.value.trim();
     const price = txtPrice.value.trim();
-
     // Gửi đi các thông báo lỗi
     const errorName = document.querySelector('.er_nameVXL');
     const errorHang = document.querySelector('.er_hang');
@@ -51,7 +50,14 @@ function checkValue() {
     } else {
         const currentDate = new Date();
         const inputDate = new Date(date);
-        if (inputDate > currentDate) {
+
+        // Kiểm tra xem inputDate có hợp lệ không
+        if (isNaN(inputDate.getTime())) {
+            errorDate.textContent = 'Ngày không hợp lệ';
+            errorDate.style.display = 'block';
+            valid = false;
+        } else if (inputDate > currentDate) {
+            errorDate.textContent = 'Ngày không được là ngày trong tương lai';
             errorDate.style.display = 'block';
             valid = false;
         }

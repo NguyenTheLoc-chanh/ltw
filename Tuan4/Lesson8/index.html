@@ -58,7 +58,7 @@
     }
 </style>
 <body>
-    <div style="text-align: center; width: 100%;">
+    <div style="text-align: center; width: 100%; counter-reset: div; ">
         <table style="margin: auto;" id="table">
             <tr>
                 <th>STT</th>
@@ -66,13 +66,6 @@
                 <th>Hãng sx</th>
                 <th>Ngày ra mắt</th>
                 <th>Giá (vnđ)</th>
-            </tr>
-            <tr>
-                <td class="count"></td>
-                <td>Core i3 7000</td>
-                <td>Intel</td>
-                <td>20/11/2011</td>
-                <td>3.450.000</td>
             </tr>
         </table>
     </div>
@@ -89,7 +82,7 @@
         <label class="er_hang">Không được để trống!</label>
         <div class="list-item">
             <label for="date">Ngày ra mắt</label>
-            <input type="text" name="date" id="date">
+            <input type="text" name="date" id="date" placeholder="yyyy/MM/dd">
         </div>
         <label class="er_date">Ngày ra mắt không được lớn hơn ngày hiện tại!</label>
         <div class="list-item">
