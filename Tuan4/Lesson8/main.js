@@ -14,18 +14,16 @@ const lbPrice = document.querySelector(".er_price");
  
 // Còn lỗi check
 function checkValue() {
-    // Lấy giá trị các ô input
     const name = txtNameVLX.value.trim();
     const hang = txtHang.value.trim();
     const date = txtDate.value.trim();
     const price = txtPrice.value.trim();
-    // Gửi đi các thông báo lỗi
+
     const errorName = document.querySelector('.er_nameVXL');
     const errorHang = document.querySelector('.er_hang');
     const errorDate = document.querySelector('.er_date');
     const errorPrice = document.querySelector('.er_price');
 
-    // Reset thông báo lỗi
     errorName.style.display = 'none';
     errorHang.style.display = 'none';
     errorDate.style.display = 'none';
@@ -33,7 +31,7 @@ function checkValue() {
 
     let valid = true;
 
-    // Kiểm tra từng trường
+    // Kiểm tra
     if (name === '') {
         errorName.style.display = 'block';
         valid = false;

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson9_Tuan5", "Lesson9_Tuan5\Lesson9_Tuan5.csproj", "{F93B8A1F-A41E-40F2-A49C-BB532DA5CF9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web10", "..\..\Lesson10\Web10\Web10.csproj", "{0B91CD02-D047-4AE2-823D-4B9BB500ED4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F93B8A1F-A41E-40F2-A49C-BB532DA5CF9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93B8A1F-A41E-40F2-A49C-BB532DA5CF9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93B8A1F-A41E-40F2-A49C-BB532DA5CF9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93B8A1F-A41E-40F2-A49C-BB532DA5CF9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B91CD02-D047-4AE2-823D-4B9BB500ED4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B91CD02-D047-4AE2-823D-4B9BB500ED4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B91CD02-D047-4AE2-823D-4B9BB500ED4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B91CD02-D047-4AE2-823D-4B9BB500ED4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CDF85AD-ED9A-4BB4-A82A-A22917BC8E68}
+	EndGlobalSection
+EndGlobal
