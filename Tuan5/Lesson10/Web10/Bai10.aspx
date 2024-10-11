@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server" action="Bai10.aspx" method="post">
         <div>
-            <asp:TextBox TextMode="MultiLine" runat="server" ID="txtNoidung" name="txtNoidung" required></asp:TextBox>
-            <asp:FileUpload runat="server" type="file" ID="txtFile" name="txtFile" required />
+            <asp:TextBox TextMode="MultiLine" runat="server" ID="txtNoidung" name="txtNoidung"></asp:TextBox>
+            <asp:FileUpload runat="server" type="file" ID="txtFile" name="txtFile"/>
             <asp:Button runat="server" class="btn" value="Submit" Text="Submit"/>
         </div>
     </form>
