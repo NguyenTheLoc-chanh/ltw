@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Web Chat</title>
+    <style>
+        .row1 {
+            display: flex;
+            flex-direction: row;
+            height: 40vh;
+        }
+
+        .members {
+            border: 1px solid #000000;
+            flex: 2;
+            overflow-y: auto;
+        }
+
+        .messList {
+            border: 1px solid #000000;
+            flex: 3;
+            overflow-y: auto;
+        }
+
+        .row2 {
+            display: flex;
+            flex: 1;
+            border: 1px solid #000000;
+            height: 20vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="Login">
+        <p><a href="LoginPage.aspx">Đăng nhập</a></p>
+    </div>
+    <div class="row1">
+        <iframe src="Members.aspx" class="members" id="members"></iframe>
+        <iframe src="MessageList.aspx" class="messList" id="messList"></iframe>
+    </div>
+    <div class="row2">
+        <iframe src="PostMsg.html" id="messSend"></iframe>
+    </div>
+</body>
+</html>

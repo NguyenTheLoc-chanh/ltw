@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function validateForm() {
+            var message = document.getElementById("txtMessage").value;
+            if (message.trim() === "") {
+                alert("Vui lòng nhập tin nhắn!");
+                return false;
+            }
+            //string encodedMessage = HttpUtility.HtmlEncode(message);
+            return true;
+        }
+
+
+        function check() {
+
+            var meg = document.getElementById("txtMessage").value;
+
+            // Chuyển đổi kí tự sang html
+            meg = meg.replace(/&/g, "&amp;")
+                .replace(/>/g, "&gt;")
+                .replace(/</g, "&lt;")
+                .replace(/"/g, "&quot;");
+            document.getElementById("txtMessage").value = meg
+            return true;
+        }
+
+    </script>
+</head>
+<body>
+    <h2>Message Sender</h2>
+    <form action="SendMsg.aspx" onsubmit="return check()" method="post">
+        <input type="text" id="txtMessage" name="txtMessage" />
+        <button type="submit" id="btn_Send" onclick="return validateForm()">Send</button>
+    </form>
+</body>
+</html>
